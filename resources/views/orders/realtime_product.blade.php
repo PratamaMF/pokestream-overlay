@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Realtime Catalog - {{ Auth::user()->name }}</title>
     @if(Auth::user()->logo)
-        <link rel="icon" type="image/png" href="{{ asset('storage/' . Auth::user()->logo) }}" />
+        <link class="icon" type="image/png" href="{{ asset('storage/' . Auth::user()->logo) }}" />
     @endif
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -212,13 +212,14 @@
         function fetchInitialProducts() {
             axios.get('/api/live-stream-data-snapshot')
                 .then(res => {
-                    currentProductData = res.data.products;
+                    // Pastikan struktur respon data sesuai (res.data.products)
+                    currentProductData = res.data.products || [];
                     renderProductTable();
                 })
                 .catch(err => {
-                    console.error("Gagal sinkronisasi katalog:", err);
+                    console.error("Failed to fetch initial product data:", err);
                     document.getElementById('productFullList').innerHTML = 
-                        `<tr><td colspan="2" class="text-center text-danger small py-4"><i class="fas fa-times-circle me-1"></i> Gagal memuat data katalog dari database.</td></tr>`;
+                        `<tr><td colspan="2" class="text-center text-danger small py-4"><i class="fas fa-times-circle me-1"></i> Failed to fetch initial product data. Status: ${err.response ? err.response.status : 'Network Error'}</td></tr>`;
                 });
         }
 
@@ -249,12 +250,18 @@
                         </tr>`;
                 }
 
-                let shortPrice = p.price.replace('Rp ', '').replace('.000', ' K');
+                // Bersihkan string harga dari karakter non-angka
+                let cleanNumber = parseInt(String(p.price).replace(/[^0-9]/g, ''));
+                
+                // Format menggunakan standard id-ID agar menghasilkan pemisah titik (misal: 2.000.000)
+                let normalPrice = !isNaN(cleanNumber) 
+                    ? new Intl.NumberFormat('id-ID').format(cleanNumber) 
+                    : p.price;
 
                 htmlContent += `
                     <tr class="product-row animate-fade-in">
                         <td>${p.name} <span class="stock-label">(${p.stock} pcs)</span></td>
-                        <td>${shortPrice}</td>
+                        <td>${normalPrice}</td>
                     </tr>`;
             });
             
