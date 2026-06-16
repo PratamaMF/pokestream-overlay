@@ -1,0 +1,819 @@
+/* * Pradash - Bootstrap 5 HTML Admin Template
+ * ==============================================================
+ * Author: M. Fajar Pratama
+ * Created: 2026
+ * Copyright 2026 Pradash Admin. All rights reserved.
+ * For inquiries or purchase:
+ * Website: https://praport.netlify.app/
+ * Email:  xfajarpratamaaa@gmail.com
+ * ===============================================================
+ */
+
+:root {
+    --primary-color: #162d4d;
+    --secondary-color: #8898aa;
+    --warning-color: #f59e0b;
+    --success-color: #10b981;
+    --info-color: #0ea5e9;
+    --danger-color: #ef4444;
+    --sidebar-bg: #ffffff;
+    --body-bg: #f4f7f9;
+    --accent-gray: #8898aa;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background-color: var(--body-bg);
+    font-size: 0.8 rem !important;
+}
+
+/* 
+** ==== TOP NAVBAR ==========================================================
+** Pradash Admin
+*/
+.sb-topnav.navbar {
+    height: 70px;
+    background-color: var(--primary-color) !important;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+    width: 260px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 0;
+}
+
+.navbar-brand img {
+    max-height: 50px;
+    width: auto;
+    object-fit: contain;
+}
+
+/* 
+** ==== SIDEBAR ==========================================================
+** Pradash Admin 
+*/
+#layoutSidenav_nav {
+    border-right: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.sb-sidenav-menu {
+    overflow-y: auto;
+    max-height: calc(100vh - 70px);
+}
+
+.sb-sidenav-menu::-webkit-scrollbar {
+    width: 5px;
+}
+.sb-sidenav-menu::-webkit-scrollbar-thumb {
+    background: rgba(22, 45, 77, 0.1);
+    border-radius: 10px;
+}
+
+.sb-sidenav-light {
+    background-color: var(--sidebar-bg);
+}
+
+.sb-sidenav-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sb-sidenav-light .sb-sidenav-menu .nav-link {
+    color: #5a6a85;
+    font-size: 0.8rem;
+    font-weight: 500;
+    padding: 0.75rem 1.2rem;
+    margin: 0.2rem 0.8rem;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    text-decoration: none;
+    position: relative;
+}
+
+.nav-link-content {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+}
+
+.sb-sidenav-light .sb-sidenav-menu .nav-link:hover {
+    color: var(--primary-color);
+    background-color: rgba(22, 45, 77, 0.05);
+}
+
+.sb-sidenav-light .sb-sidenav-menu .nav-link.active {
+    color: var(--primary-color) !important;
+    background-color: rgba(22, 45, 77, 0.1) !important;
+    font-weight: 700;
+}
+
+.sb-sidenav-light .sb-sidenav-menu .nav-link .sb-nav-link-icon {
+    color: #5a6a85;
+    width: 25px;
+    margin-right: 10px;
+    text-align: center;
+}
+
+.sb-sidenav-collapse-arrow {
+    margin-left: auto;
+    font-size: 0.7rem;
+    transition: transform 0.3s ease;
+}
+
+.nav-link.collapsed .sb-sidenav-collapse-arrow {
+    transform: rotate(0deg);
+}
+
+.nav-link:not(.collapsed) .sb-sidenav-collapse-arrow {
+    transform: rotate(180deg);
+}
+
+.sb-sidenav-light .sb-sidenav-menu .nav-link.active .sb-nav-link-icon {
+    color: var(--primary-color) !important;
+}
+
+.sb-sidenav-menu-heading {
+    padding: 1.5rem 1.5rem 0.5rem !important;
+    color: #adb5bd !important;
+    font-size: 0.7rem !important;
+    font-weight: 700 !important;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.sb-sidenav-menu-nested {
+    padding-left: 2.4rem !important;
+    list-style: none;
+    margin: 0;
+}
+
+.sb-sidenav-menu-nested .sb-sidenav-menu-nested {
+    padding-left: 1.5rem !important;
+    border-left: 1px solid #e9ecef;
+    margin-left: 0.2rem;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.sb-sidenav-menu-nested .nav-link {
+    font-size: 0.75rem !important;
+    padding: 0.5rem 1rem !important;
+    margin: 0.1rem 0.8rem !important;
+}
+
+/* 
+** ==== PAGES : ACCOUNT SETTINGS ==========================================
+** Pradash Admin 
+*/
+.profile-icon-wrapper {
+    width: 120px;
+    height: 120px;
+    background-color: rgba(22, 45, 77, 0.05);
+    color: var(--primary-color);
+    border: 3px solid #eef2ff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    font-size: 3rem;
+    transition: all 0.3s ease;
+}
+
+.profile-icon-wrapper:hover {
+    transform: scale(1.05);
+}
+
+/* 
+** ==== COMPONENT : CARD ==================================================
+** Pradash Admin 
+*/
+.card {
+    border: none;
+    border-radius: 15px;
+    background: #fff;
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+    transition: transform 0.2s ease;
+    border-bottom: 4px solid #ddd;
+}
+
+.hoverfx:hover {
+    transform: translateY(-5px);
+}
+
+.card .icon-circle {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+    margin-bottom: 15px;
+}
+
+.card .card-label {
+    font-size: 0.8rem;
+    color: var(--accent-gray);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.card .card-value {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.accent-primary {
+    border-bottom-color: var(--primary-color);
+}
+.accent-primary .icon-circle {
+    background: rgba(22, 45, 77, 0.1);
+    color: var(--primary-color);
+}
+
+.accent-warning {
+    border-bottom-color: #f59e0b;
+}
+.accent-warning .icon-circle {
+    background: rgba(245, 158, 11, 0.1);
+    color: #f59e0b;
+}
+
+.accent-success {
+    border-bottom-color: #10b981;
+}
+.accent-success .icon-circle {
+    background: rgba(16, 185, 129, 0.1);
+    color: #10b981;
+}
+
+.accent-danger {
+    border-bottom-color: #ef4444;
+}
+.accent-danger .icon-circle {
+    background: rgba(239, 68, 68, 0.1);
+    color: #ef4444;
+}
+
+.card {
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+}
+
+.card-header {
+    background-color: #fff;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+.card-welcome {
+    background: linear-gradient(45deg, #162d4d, #2a4a75);
+    border: none;
+    color: white;
+    border-radius: 15px;
+    padding: 1.5rem;
+}
+
+.card-welcome img {
+    max-width: 150px;
+    position: absolute;
+    right: 20px;
+    bottom: 0;
+    opacity: 0.8;
+}
+
+.card-img-custom {
+    height: 180px;
+    object-fit: cover;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+.card-footer-action {
+    background-color: transparent;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+    padding: 1rem 1.5rem;
+}
+
+.hoverfx {
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.hoverfx:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08) !important;
+}
+
+.bg-gradient-primary {
+    background: linear-gradient(45deg, #162d4d, #2a4a75);
+    color: white;
+}
+
+.card-profile-img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    margin-top: -40px;
+    border: 4px solid #fff;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.timeline-item {
+    border-left: 2px solid #eef2ff;
+    padding-left: 20px;
+    position: relative;
+    padding-bottom: 1.5rem;
+}
+
+.timeline-item::after {
+    content: "";
+    position: absolute;
+    left: -7px;
+    top: 0;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--primary-color);
+}
+
+.pricing-value {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--primary-color);
+}
+
+/* 
+** ==== COMPONENT : BADGES ==========================================
+** Pradash Admin 
+*/
+.badge {
+    font-weight: 600;
+    padding: 0.4em 0.8em;
+    border-radius: 6px;
+}
+
+.badge-soft-primary {
+    background-color: rgba(22, 45, 77, 0.1);
+    color: #162d4d;
+}
+.badge-soft-success {
+    background-color: rgba(25, 135, 84, 0.1);
+    color: #10b981;
+}
+.badge-soft-danger {
+    background-color: rgba(220, 53, 69, 0.1);
+    color: #ef4444;
+}
+.badge-soft-warning {
+    background-color: rgba(255, 193, 7, 0.1);
+    color: #f59e0b;
+}
+.badge-soft-info {
+    background-color: rgba(13, 202, 240, 0.1);
+    color: #0ea5e9;
+}
+
+.badge-notification {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    padding: 0.35em 0.5em;
+    font-size: 0.6rem;
+    border: 2px solid #fff;
+}
+
+/* 
+** ==== COMPONENT : BUTTONS ==========================================
+** Pradash Admin 
+*/
+.btn {
+    padding: 0.5rem 1.2rem;
+    border-radius: 8px;
+    font-weight: 500;
+    font-size: 0.875rem;
+    transition: all 0.2s ease;
+    border: 1px solid transparent;
+}
+
+.btn:hover {
+    transform: translateY(-1px);
+}
+
+.btn-lg {
+    padding: 0.8rem 1.8rem !important;
+    font-size: 1.1rem !important;
+}
+.btn-sm {
+    padding: 0.25rem 0.8rem !important;
+    font-size: 0.75rem !important;
+}
+
+/* --- Button Primary --- */
+.btn-primary {
+    background-color: var(--primary-color) !important;
+    border-color: var(--primary-color) !important;
+    color: #fff !important;
+}
+.btn-primary:hover {
+    background-color: #0f1f35 !important;
+}
+.btn-outline-primary {
+    background-color: transparent !important;
+    border: 1px solid var(--primary-color) !important;
+    color: var(--primary-color) !important;
+}
+.btn-outline-primary:hover {
+    background-color: var(--primary-color) !important;
+    color: #fff !important;
+}
+
+/* --- Button Secondary --- */
+.btn-secondary {
+    background-color: var(--secondary-color) !important;
+    border-color: var(--secondary-color) !important;
+    color: #fff !important;
+}
+.btn-secondary:hover {
+    background-color: #545c65 !important;
+}
+.btn-outline-secondary {
+    background-color: transparent !important;
+    border: 1px solid var(--secondary-color) !important;
+    color: var(--secondary-color) !important;
+}
+.btn-outline-secondary:hover {
+    background-color: var(--secondary-color) !important;
+    color: #fff !important;
+}
+
+/* --- Button Success --- */
+.btn-success {
+    background-color: var(--success-color) !important;
+    border-color: var(--success-color) !important;
+}
+.btn-success:hover {
+    background-color: #0a9365 !important;
+}
+.btn-outline-success {
+    background-color: transparent !important;
+    border: 1px solid var(--success-color) !important;
+    color: var(--success-color) !important;
+}
+.btn-outline-success:hover {
+    background-color: var(--success-color) !important;
+    color: #fff !important;
+}
+
+/* --- Button Warning --- */
+.btn-warning {
+    background-color: var(--warning-color) !important;
+    border-color: var(--warning-color) !important;
+    color: #fff !important;
+}
+.btn-warning:hover {
+    background-color: #c27e09 !important;
+}
+.btn-outline-warning {
+    background-color: transparent !important;
+    border: 1px solid var(--warning-color) !important;
+    color: var(--warning-color) !important;
+}
+.btn-outline-warning:hover {
+    background-color: var(--warning-color) !important;
+    color: #fff !important;
+}
+
+/* --- Button Info ---  */
+.btn-info {
+    background-color: var(--info-color) !important;
+    border-color: var(--info-color) !important;
+    color: #fff !important;
+}
+.btn-info:hover {
+    background-color: #0b87c1 !important;
+}
+.btn-outline-info {
+    background-color: transparent !important;
+    border: 1px solid var(--info-color) !important;
+    color: var(--info-color) !important;
+}
+.btn-outline-info:hover {
+    background-color: var(--info-color) !important;
+    color: #fff !important;
+}
+
+/* --- Button Danger --- */
+.btn-danger {
+    background-color: var(--danger-color) !important;
+    border-color: var(--danger-color) !important;
+}
+.btn-danger:hover {
+    background-color: #b91c1c !important;
+}
+.btn-outline-danger {
+    background-color: transparent !important;
+    border: 1px solid var(--danger-color) !important;
+    color: var(--danger-color) !important;
+}
+.btn-outline-danger:hover {
+    background-color: var(--danger-color) !important;
+    color: #fff !important;
+}
+
+/* --- Soft Buttons --- */
+.btn-soft-primary {
+    background: rgba(22, 45, 77, 0.1) !important;
+    color: var(--primary-color) !important;
+    border: none !important;
+}
+.btn-soft-secondary {
+    background: rgba(22, 45, 77, 0.1) !important;
+    color: var(--secondary-color) !important;
+    border: none !important;
+}
+.btn-soft-success {
+    background: rgba(16, 185, 129, 0.1) !important;
+    color: var(--success-color) !important;
+    border: none !important;
+}
+.btn-soft-warning {
+    background: rgba(245, 158, 11, 0.1) !important;
+    color: var(--warning-color) !important;
+    border: none !important;
+}
+.btn-soft-info {
+    background: rgba(14, 165, 233, 0.1) !important;
+    color: var(--info-color) !important;
+    border: none !important;
+}
+.btn-soft-danger {
+    background: rgba(239, 68, 68, 0.1) !important;
+    color: var(--danger-color) !important;
+    border: none !important;
+}
+
+/* Hover Soft Buttons */
+.btn-soft-primary:hover {
+    background: var(--primary-color) !important;
+    color: #fff !important;
+}
+.btn-soft-secondary:hover {
+    background: var(--secondary-color) !important;
+    color: #fff !important;
+}
+.btn-soft-success:hover {
+    background: var(--success-color) !important;
+    color: #fff !important;
+}
+.btn-soft-warning:hover {
+    background: var(--warning-color) !important;
+    color: #fff !important;
+}
+.btn-soft-info:hover {
+    background: var(--info-color) !important;
+    color: #fff !important;
+}
+.btn-soft-danger:hover {
+    background: var(--danger-color) !important;
+    color: #fff !important;
+}
+
+/* 
+** ==== COMPONENT : MODAL ==========================================
+** Pradash Admin 
+*/
+.modal-content {
+    border-radius: 15px;
+    border: none;
+}
+
+.modal-header {
+    padding: 1.5rem 1.5rem 1rem;
+}
+
+.modal-footer {
+    padding: 1rem 1.5rem 1.5rem;
+}
+
+.modal-backdrop.show {
+    opacity: 0.4;
+}
+
+.modal.fade .modal-dialog {
+    transform: scale(0.9);
+    transition: transform 0.3s ease-out;
+}
+
+.modal.show .modal-dialog {
+    transform: scale(1);
+}
+
+/* 
+** ==== COMPONENT : TAB & PILLS ==========================================
+** Pradash Admin 
+*/
+.nav-tabs {
+    border-bottom: 2px solid #eef2ff;
+}
+
+.nav-tabs .nav-link {
+    border: none;
+    color: var(--secondary-color);
+    font-weight: 600;
+    padding: 0.8rem 1.2rem;
+    transition: all 0.3s ease;
+}
+
+.nav-tabs .nav-link.active {
+    color: var(--primary-color) !important;
+    background: transparent;
+    border-bottom: 2px solid var(--primary-color);
+}
+
+.nav-pills .nav-link {
+    border-radius: 8px;
+    color: var(--secondary-color);
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+.nav-pills .nav-link.active {
+    background-color: var(--primary-color) !important;
+    color: #fff !important;
+    box-shadow: 0 4px 10px rgba(22, 45, 77, 0.2);
+}
+
+.tab-content {
+    padding-top: 20px;
+}
+
+/* 
+** ==== COMPONENT : TOAST ==========================================
+** Pradash Admin 
+*/
+.toast {
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1) !important;
+    background-color: #fff;
+}
+
+.toast-header {
+    background-color: transparent;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    padding: 0.75rem 1rem;
+}
+
+.toast-body {
+    padding: 1rem;
+    font-size: 0.85rem;
+}
+
+.toast-container {
+    z-index: 1090;
+}
+
+/* 
+** ==== FORM & TABLES : FORM ==========================================
+** Pradash Admin 
+*/
+.form-label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.form-control,
+.form-select {
+    border: 1px solid #e0e6ed;
+    padding: 0.6rem 1rem;
+    font-size: 0.9rem;
+    border-radius: 8px;
+    transition: all 0.2s;
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.25rem rgba(22, 45, 77, 0.1);
+    outline: 0;
+}
+
+.form-text {
+    font-size: 0.75rem;
+    color: var(--accent-gray);
+}
+
+.card-form-header {
+    background-color: transparent;
+    padding: 1.25rem 1.5rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.card-form-header h5 {
+    margin: 0;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.input-group-text {
+    background-color: #f8f9fa;
+    border: 1px solid #e0e6ed;
+    color: var(--primary-color);
+}
+
+.form-check-input:checked {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.form-check-label {
+    cursor: pointer;
+}
+
+/* 
+** ==== FORM & TABLES : TABLES ==========================================
+** Pradash Admin 
+*/
+.datatable-search {
+    max-width: 120px;
+    float: right;
+}
+
+.datatable-input {
+    padding: 0.4rem 0.75rem !important;
+    font-size: 1 rem !important;
+    border-radius: 8px !important;
+    border: 1px solid #dee2e6 !important;
+    background-color: #f8f9fa !important;
+}
+
+.img-prev {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid #eef2ff;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.img-prev:hover {
+    transform: scale(1.15) rotate(3deg);
+    box-shadow: 0 5px 15px rgba(22, 45, 77, 0.15);
+    border-color: var(--primary-color);
+}
+
+#imagePreviewModal .modal-dialog {
+    max-width: 90vh;
+    margin: 1.75rem auto;
+}
+
+#imagePreviewModal .modal-content {
+    background-color: transparent;
+    border: none;
+}
+
+#imagePreviewModal .modal-body {
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#imagePreviewModal .img-full-preview {
+    max-width: 95vw;
+    max-height: 90vh;
+    object-fit: contain;
+    border-radius: 10px;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+    cursor: zoom-out;
+}
+
+.modal-backdrop.show {
+    opacity: 0.85;
+}
